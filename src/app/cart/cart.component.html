@@ -1,0 +1,26 @@
+<div class="row mx-auto w-75 bg-main-light p-3">
+    <h2 class="h3 text-center">Shop Cart</h2>
+    <p class="text-main">Total price: {{cartData.totalCartPrice}}</p>
+    <div class="row border-bottom border-black py-3 border-opacity-25" *ngFor="let product of cartData.products">
+        <div class="col-md-1">
+            <img [src]="product.product.imageCover" class="w-100" alt="img cover">
+        </div>
+        <div class="col-md d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="h6">{{product.product.title}}</h3>
+                <p class="text-main">Price: {{product.price}}</p>
+                <span class="text-main cursor-pointer" (click)="removeItem(product.product.id)"><i
+                        class="fa-solid fa-trash"></i> Remove</span>
+            </div>
+            <div>
+                <span (click)="updateItem(product.product.id, product.count + 1)"
+                    class="border border-black solid rounded-2 px-2 py-1 cursor-pointer">+</span>
+                <span class="mx-3">{{product.count}}</span>
+                <span (click)="updateItem(product.product.id, product.count - 1)"
+                    class="border border-black solid rounded-2 px-2 py-1 cursor-pointer">-</span>
+            </div>
+        </div>
+    </div>
+    <button class="main-btn w-auto p-2 mt-3"  [routerLink]="['/shipaddress' , cartData._id]">Online Payment <img src="../../assets/images/visa.jpg" width="45"
+            class="rounded-1" alt="visa"></button>
+</div>

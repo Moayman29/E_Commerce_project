@@ -1,0 +1,28 @@
+<div class="row mx-auto w-50 bg-main-light rounded-2 p-3 shadow">
+    <h2 class="text-center">Shipping Address</h2>
+    <form [formGroup]="addressForm" (ngSubmit)="handleAddressForm()">
+        <label for="details">Details:</label>
+        <textarea placeholder="Your Details..." formControlName="details" class="form-control mb-2" id="details"
+            cols="40" rows="2"></textarea>
+        <div *ngIf="addressForm.get('details')?.touched && addressForm.get('details')?.errors " class="alert alert-danger">
+            <div *ngIf="addressForm.get('details')?.getError('required')">Details is required</div>
+            <div *ngIf="addressForm.get('details')?.getError('minlength')">Min length is 2</div>
+        </div>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" placeholder="Your Phone..." formControlName="phone" class="form-control mb-2" id="phone">
+        <div *ngIf="addressForm.get('phone')?.touched && addressForm.get('phone')?.errors " class="alert alert-danger">
+            <div *ngIf="addressForm.get('phone')?.getError('required')">Phone number is required</div>
+            <div *ngIf="addressForm.get('phone')?.getError('pattern')">Please enter a valid Egyptian phone number </div>
+        </div>
+
+        <label for="city">City:</label>
+        <input type="text" placeholder="Your City..." formControlName="city" class="form-control mb-2" id="city">
+        <div *ngIf="addressForm.get('city')?.touched && addressForm.get('city')?.errors " class="alert alert-danger">
+            <div *ngIf="addressForm.get('city')?.getError('required')">City is required</div>
+            <div *ngIf="addressForm.get('city')?.getError('minlength')">Min length is 2</div>
+        </div>
+
+        <button [disabled]="addressForm.invalid" class="btn main-btn w-100"><span>Next</span></button>
+    </form>
+</div>

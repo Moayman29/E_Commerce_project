@@ -1,0 +1,20 @@
+.my-container{
+    margin-bottom: 50px;
+    height: 400px;
+}
+
+.slider-body{
+    display: grid;
+    grid-template-columns: 1120px 370px;
+    grid-template-rows: 400px;
+}
+
+.static{
+    display: flex;
+    flex-direction: column;
+}
+
+.static img{
+    width: 100%;
+    height: 50%;
+}

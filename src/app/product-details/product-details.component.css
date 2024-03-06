@@ -1,0 +1,16 @@
+p{
+    margin: 0;
+}
+
+.category-name{
+    color:var(--main-color);
+}
+
+.price{
+    margin: 20px 0;
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+}

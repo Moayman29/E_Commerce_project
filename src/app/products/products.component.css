@@ -1,0 +1,85 @@
+.row {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 280px);
+    column-gap: 25px;
+    row-gap: 25px;
+}
+
+.product {
+    border-radius: 5px;
+    position: relative;
+    padding: 0 5px;
+}
+
+.product:hover {
+    box-shadow: var(--box-shadow);
+    border: solid 1px var(--main-color);
+}
+
+.product .add-btn {
+    transition: transform 1s, opacity 1s, background-color 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product .main-btn{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 1.2s all;
+}
+
+.product:hover .main-btn{
+    transform: translateY(0);
+    transition: 1.2s all;
+    opacity: 1;
+}
+
+.wish-icon{
+    color: var(--main-color);
+    position: absolute;
+    font-size: 45px;
+    right: 15px;
+    top: 10px;
+}
+
+.product .wish-icon{
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 1.2s all;
+}
+
+.product:hover .wish-icon{
+    transform: translateY(0);
+    transition: 1.2s all;
+    opacity: 1;
+}
+
+.my-pagination ::ng-deep .ngx-pagination li{
+    text-decoration: underline;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current{
+    background-color: var(--main-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a:hover{
+    border-radius: 5px;
+    background-color: rgba(8, 226, 8, 0.1);
+} 
+
+
+.page-navigator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: var(--main-color);
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+}

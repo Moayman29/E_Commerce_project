@@ -1,0 +1,10 @@
+.login-row{
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+h2{
+    text-align: center;
+    font-size: 65px;
+}

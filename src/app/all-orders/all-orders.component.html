@@ -1,0 +1,30 @@
+<div class="all-orders row mx-auto w-75 bg-main-light">
+    <h2 class="h3 text-center">All Orders</h2>
+    <div class="order-row row border-bottom border-black py-3 border-opacity-25" *ngFor="let order of ordersArr">
+        <p>Order: {{ordersArr.indexOf(order)+1}}</p>
+        <div class="order-details">
+            <div class="order-content">
+                <div>
+                        <img [src]="order.cartItems[0].product.imageCover" class="order-image" height="" alt="img cover">
+                </div>
+                <div class="cart-items">
+                    <p class="h6">{{order.cartItems[0].product.title}}</p>
+                    <p>Count: {{order.cartItems[0].count}}</p>
+                    <p>Price: {{order.cartItems[0].price}}</p>
+                </div>
+                <hr class="bg-danger">
+            </div>
+            <div class="ship-details col-md-4">
+                <p>Is Paid: <span *ngIf="order.isPaid" class="bg-success condition-card">Yes</span><span
+                        *ngIf="!order.isPaid" class="bg-danger condition-card">No</span></p>
+                <p>Is Delivered: <span *ngIf="order.isDelivered" class="bg-success condition-card">Yes</span><span
+                        *ngIf="!order.isDelivered" class="bg-danger condition-card">No</span></p>
+                <p>Payment method type: {{order.paymentMethodType}}</p>
+                <p>total order price: {{order.totalOrderPrice}}</p>
+            </div>
+        </div>
+        <div class="black-line">
+            <hr>
+        </div>
+    </div>
+</div>

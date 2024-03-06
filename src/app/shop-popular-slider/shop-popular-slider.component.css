@@ -1,0 +1,19 @@
+.category-card{
+    width: 215px;
+    height: 230px;
+}
+
+/* .categories-cols{
+    display: grid;
+    grid-template-columns: repeat(7,auto);
+    justify-content: center;
+} */
+
+.category-card img{
+    height: 200px;
+    width: 100%;
+}
+
+.category-card p{
+    color: var(--main-color);
+}

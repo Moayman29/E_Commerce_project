@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="category-details-card"> 
+        <div class="category-content">
+            <div class="category-image">
+                <div>
+                    <img [src]="categoryDetails.image" alt="category-image">
+                </div>
+            </div>
+            <div class="category-info">
+                <div>
+                    <h2 class="h3">{{categoryDetails.name}}</h2>
+                    <h3 class="h4">Sub Categories:</h3>
+                    <div class="subcategories">
+                        <span class="subcategory me-2" *ngFor="let subcategory of subcategories">{{subcategory.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font-family: "Encode Sans Expanded", sans-serif;
+    --rating-color: #ffc908;
+    --main-color: #0aad0a;
+    --main-light-color: #f0f3f2;
+    --box-shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+        rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+        rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+}
+
+/* utilities */
+
+body {
+    font-family: var(--main-font-family);
+    position: relative;
+    min-height: 93vh;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 230px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.rating-color {
+    color: var(--rating-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.font-sm {
+    font-size: 12px;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.text-main-light {
+    color: var(--main-light-color);
+}
+
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.bg-main-light {
+    background-color: var(--main-light-color)
+}
+
+
+/* main-button */
+.main-btn {
+    border: unset;
+    cursor: pointer;
+    color: #fff !important;
+    background-color: #0aad0a !important;
+    padding: 4px 8px;
+    transition: background-color 0.8s;
+    border-radius: 5px;
+}
+
+.main-btn:hover {
+    background-color: #08e208 !important;
+}
+
+.main-btn:disabled {
+    background-color: #067a06 63 !important;
+    color: #fff 8e !important;
+    cursor: not-allowed;
+}
+
+/* input focus */
+input:focus {
+    border-color: #0aad0a !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem #0aad0a63;
+    box-shadow: 5px;
+}
