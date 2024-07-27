@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { BrandsComponent } from './brands/brands.component';
-import { CartComponent } from './cart/cart.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProductsComponent } from './products/products.component';
-import { authGuard } from './auth.guard';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ShipaddressComponent } from './shipaddress/shipaddress.component';
-import { CategoryDetailsComponent } from './category-details/category-details.component';
-import { BrandDetailsComponent } from './brand-details/brand-details.component';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { AboutComponent } from './components/about/about.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ProductsComponent } from './components/products/products.component';
+import { authGuard } from './guards/auth/auth.guard';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ShipaddressComponent } from './components/shipaddress/shipaddress.component';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { BrandDetailsComponent } from './components/brand-details/brand-details.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AllOrdersComponent } from './components/all-orders/all-orders.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:'full'},
@@ -32,9 +34,11 @@ const routes: Routes = [
   {path:"products/:id",canActivate:[authGuard],component:ProductDetailsComponent,title:"Product Details"},
   {path:"wishlist",canActivate:[authGuard],component:WishListComponent,title:"Wish List"},
   {path:"allorders",canActivate:[authGuard],component:AllOrdersComponent,title:"All Orders"},
+  {path:"forgotpassword",component:ForgotPasswordComponent,title:"Forgot Password"},
+  {path:"updatepassword",canActivate:[authGuard],component:UpdatePasswordComponent,title:"Update Password"},
+  {path:"profile",canActivate:[authGuard],component:ProfileComponent,title:"Profile"},
   {path:"login",component:LoginComponent,title:"Login"},
   {path:"signup",component:SignupComponent,title:"Register"},
-  {path:"forgotpassword",component:ForgotPasswordComponent,title:"Forgot Password"},
   {path:"**",component:NotFoundComponent,title:"Not Found"},
 ];
 

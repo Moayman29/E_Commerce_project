@@ -1,0 +1,110 @@
+.empty-list{
+    margin: 80px 0;
+    padding: 35px 0;
+    text-align: center;
+}
+
+.empty-list p{
+    font-size: 1.5rem;
+}
+
+ @media screen and (max-width: 900px) and (min-width: 600px) {
+    .empty-list p{
+        text-align: center;
+        font-size: 2rem;
+    }
+ }
+ @media screen and (max-width: 1200px) and (min-width: 900px) {
+    .empty-list p{
+        text-align: center;
+        font-size: 3rem;
+    }
+ }
+ @media screen and (min-width: 1200px) {
+    .empty-list p{
+        text-align: center;
+        font-size: 4rem;
+    }
+ }
+
+ #clear-button:hover{
+    color: white !important;
+    background-color: #DC3545;
+ }
+
+ .product-image{
+    width: 100%;
+ }
+
+ .items-list{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 20% 80% ;
+    column-gap: 25px;
+    row-gap: 25px;
+ }
+
+ @media screen and (min-width: 1400px) {
+    .items-list{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 20% 80% ;
+        column-gap: 25px;
+        row-gap: 25px;
+     }
+     .row{
+        width: 75%;
+     }
+     .product-image{
+        width: 75%;
+     }
+}
+
+@media (max-width: 1400px) and (min-width: 1100px) {
+    .items-list{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 20% 80% ;
+        column-gap: 25px;
+        row-gap: 25px;
+     }
+     .row{
+        width: 75%;
+     }
+     .product-image{
+        width: 80%;
+     }
+}
+
+@media (max-width: 1100px) and (min-width: 770px) {
+    .items-list{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 20% 80% ;
+        column-gap: 25px;
+        row-gap: 25px;
+     }
+     .row{
+        width: 85%;
+     }
+}
+
+@media (max-width: 770px) and (min-width: 480px) {
+    .items-list{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 25% 75% ;
+        column-gap: 25px;
+        row-gap: 25px;
+     }
+}
+
+@media screen and (max-width: 480px) {
+    .items-list{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 25% 75% ;
+        column-gap: 25px;
+        row-gap: 25px;
+     }
+}

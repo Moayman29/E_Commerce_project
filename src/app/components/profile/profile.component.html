@@ -1,0 +1,38 @@
+<div>
+    <div class="text-center mt-5">
+        <h1>Hello : {{userName}}</h1>
+    </div>
+    <div *ngIf="addressArr.length">
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th class="table-cell">Name:</th>
+                    <th class="table-cell">Details:</th>
+                    <th class="table-cell">Phone:</th>
+                    <th class="table-cell">City:</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let address of addressArr">
+                <tr>
+                    <td>{{address.name}}</td>
+                    <td>{{address.details}}</td>
+                    <td>{{address.phone}}</td>
+                    <td>{{address.city}}</td>
+                    <i class="fa-solid fa-trash" (click)="removeAddress(address._id)"></i>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form (ngSubmit)="handleAddressForm()" [formGroup]="addressForm">
+        <div class="row address-container px-2 py-4">
+            <div class="mb-3 d-flex justify-content-evenly">
+                <input type="text" placeholder="Name" formControlName="name">
+                <input type="text" placeholder="Details" formControlName="details">
+                <input type="phone" placeholder="Phone" formControlName="phone">
+                <input type="text" placeholder="City" formControlName="city">
+            </div>
+            <button class="btn main-btn">ADD ADDRESS</button>
+        </div>
+    </form>
+</div>

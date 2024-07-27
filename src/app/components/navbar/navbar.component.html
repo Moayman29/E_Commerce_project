@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" id="nav-shrink"
+    [ngClass]="scroll==true && isLogIn==true ? 'shrink' : 'unshrink'">
+    <div class="container-fluid">
+        <img src="../../assets/images/logo.png" alt="fresh cart logo" [ngClass]="isLogIn==true? null : 'logedout-logo'" class="navbar-brand" routerLink="home">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 mt-lg-0 text-center" *ngIf="isLogIn">
+                <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active-link" routerLink="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active-link" routerLink="products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active-link" routerLink="brands">Brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLinkActive="active-link" routerLink="categories">Categories</a>
+                </li>
+            </ul>
+            <div class="navbar-nav" >
+                <ul class="navbar-nav cursor-pointer align-items-center">
+                    <div class="d-flex flex-row align-items-center">
+                    <li class="nav-settings me-4 " id="heart-icon" *ngIf="isLogIn">
+                        <a (click)="goToWishList()">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="wish-count" *ngIf="wishCount!=0">{{wishCount}}</span>
+                        </a>
+                    </li>
+                    <li *ngIf="isLogIn" class="nav-settings me-4 " data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="user-icon">
+                        <div class="dropdown">
+                            <a>
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                            <i class="fa-solid fa-caret-down"></i>
+                            <ul class="dropdown-menu">
+                                <li ><a aria-current="active-item" class="dropdown-item" [routerLink]="['/updatepassword']" routerLinkActive="active-drop-link">Update Password</a></li>
+                                <li ><a aria-current="active-item" class="dropdown-item" [routerLink]="['/profile']" routerLinkActive="active-drop-link">Profile</a></li>
+                                <li ><a aria-current="active-item" class="dropdown-item" [routerLink]="['/allorders']" routerLinkActive="active-drop-link">My Orders</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-settings me-4" id="cart-icon" *ngIf="isLogIn">
+                        <a (click)="goToCart()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-count" *ngIf="cartCount!=0">{{cartCount}}</span>
+                        </a>
+                    </li>
+                    <li class="nav-social  me-3" *ngIf="isLogIn">
+                        <a (click)="goToFacebook()">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="nav-social  me-3" *ngIf="isLogIn">
+                        <a (click)="sendWhatsappMsg()">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </div>
+                    <div class="navbar-nav logedout text-center " *ngIf="!isLogIn">
+                        <ul class="navbar-nav me-auto mt-2 mt-lg-0 d-flex justify-content-center">
+                            <li class="nav-item ms-2">
+                                <a class="nav-link " routerLinkActive="active-link" routerLink="login">Login</a>
+                            </li>
+                            <li class="nav-item ms-2">
+                                <a class="nav-link " routerLinkActive="active-link" routerLink="signup">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <li *ngIf="isLogIn" class="nav-item ms-2 mt-2 mt-lg-0 px-2 cursor-pointer rounded-2 border-2 bg-dark ">
+                        <span (click)="logOut()" class="nav-link text-white ">SignOut</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

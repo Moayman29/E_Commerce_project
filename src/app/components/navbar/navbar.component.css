@@ -1,0 +1,148 @@
+nav {
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-brand {
+    width: 165px;
+    cursor: pointer;
+}
+
+.active-link {
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding-inline: 4px;
+    color: white;
+}
+
+.nav-settings i {
+    color: var(--main-color);
+}
+
+.nav-settings {
+    align-self: center;
+}
+
+#heart-icon i {
+    font-size: 32px;
+}
+
+#user-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#user-icon a i {
+    border: solid 1px var(--main-color);
+    border-radius: 50%;
+    padding: 10px 12px;
+}
+
+#user-icon i:nth-child(2) {
+    position: relative;
+    right: -14px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+#cart-icon {
+    font-size: 25px;
+}
+
+@media screen and (min-width:900px) {   
+    .unshrink {
+        transition: 0.8s ease-out;
+    }
+    
+    .shrink {
+        padding: 16px 48px;
+        transition: 0.8s ease-out;
+    }
+}
+
+.dropdown-menu {
+    width: 160px;
+    height: max-content;
+    position: absolute;
+    top: 45px;
+    left: -55px;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.dropdown-menu li {
+    font-size: 14px;
+    padding: 0 4px;
+    margin: 0;
+}
+
+.dropdown-item {
+    padding: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: #055d0a;
+    color: white !important;
+    transition: background-color 1.2s;
+}
+
+.active-item {
+    background-color: var(--main-color);
+    border-radius: 2px;
+}
+
+.active-drop-link {
+    background-color: var(--main-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.active-drop-link:hover {
+    background-color: #055d0a !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 1.2s;
+}
+
+.wish-count {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+    left: -21px;
+}
+
+.cart-count {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: -6px;
+    left: -18px;
+}
+
+.logedout-logo {
+    position: relative;
+}
+    @media screen and (min-width: 992px) {
+        .logedout-logo {
+            position: relative;
+            left: 15%;
+        }
+    }
+
+@media screen and (min-width: 992px) {
+    .logedout {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 100px;
+    }
+}
+
+.nav-social{
+    font-size: x-large;
+}
+
+
+

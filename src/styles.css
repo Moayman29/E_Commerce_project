@@ -87,8 +87,8 @@ a:hover {
 }
 
 .main-btn:disabled {
-    background-color: #067a06 63 !important;
-    color: #fff 8e !important;
+    background-color: #067a0663 !important;
+    color: #ffffff8e !important;
     cursor: not-allowed;
 }
 
@@ -98,4 +98,13 @@ input:focus {
     outline: 0;
     box-shadow: 0 0 0 .25rem #0aad0a63;
     box-shadow: 5px;
+    transition: border-color 0.5s;
+}
+
+/* fit-content error center */
+.error-fit-center{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }

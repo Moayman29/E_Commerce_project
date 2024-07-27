@@ -1,0 +1,12 @@
+<div>
+    <ng-container *ngIf="catergoriesArr.length!=0">
+        <div class="categories-cols" >
+            <div class="category-card" *ngFor="let category of catergoriesArr" (click)="goToCategory(category._id)">
+                <img [src]="category.image" alt="category-image">
+                <div class="category-name">
+                    <p>{{category.name}}</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

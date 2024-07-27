@@ -4,37 +4,40 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { BrandsComponent } from './brands/brands.component';
-import { CartComponent } from './cart/cart.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { SignupComponent } from './signup/signup.component';
-import { ProductsComponent } from './products/products.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ToastrModule } from 'ngx-toastr';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
+import { AboutComponent } from './components/about/about.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
-import { ShipaddressComponent } from './shipaddress/shipaddress.component';
-import { CategoryDetailsComponent } from './category-details/category-details.component';
-import { BrandDetailsComponent } from './brand-details/brand-details.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { MainSliderComponent } from './main-slider/main-slider.component';
-import { ShopPopularSliderComponent } from './shop-popular-slider/shop-popular-slider.component';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { ProductImageSliderComponent } from './product-image-slider/product-image-slider.component';
-import { StarRatingComponent } from './star-rating/star-rating.component';
-import { MyHttpInterceptor } from './my-http.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AllOrdersComponent } from './all-orders/all-orders.component';
-import { LoadingInterceptor } from './loading.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { AllOrdersComponent } from './components/all-orders/all-orders.component';
+import { BrandDetailsComponent } from './components/brand-details/brand-details.component';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { MainSliderComponent } from './components/main-slider/main-slider.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ShipaddressComponent } from './components/shipaddress/shipaddress.component';
+import { ShopPopularSliderComponent } from './components/shop-popular-slider/shop-popular-slider.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MyHttpInterceptor } from './interceptors/my-http/my-http.interceptor';
+import { ProductFilterPipe } from './pipes/product-filter/product-filter.pipe';
 
 
 @NgModule({
@@ -58,10 +61,12 @@ import { LoadingInterceptor } from './loading.interceptor';
     MainSliderComponent,
     ShopPopularSliderComponent,
     WishListComponent,
-    ProductImageSliderComponent,
     StarRatingComponent,
     ForgotPasswordComponent,
-    AllOrdersComponent
+    AllOrdersComponent,
+    UpdatePasswordComponent,
+    ProfileComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,

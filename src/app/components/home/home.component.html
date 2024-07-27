@@ -1,0 +1,23 @@
+<app-main-slider class="main-slider"></app-main-slider>
+<app-shop-popular-slider></app-shop-popular-slider>
+<div class="row">
+    <div class="product cursor-pointer py-1 my-3" *ngFor="let product of productsArr">
+        <div>
+            <img (click)="goToProduct(product._id)" [src]="product.imageCover" class="w-100" alt="">
+            <p class="font-sm text-main">{{product.category.name}}</p>
+            <h2 class="h6">{{product.title}}</h2>
+            <div class="d-flex justify-content-between">
+                <span>EGP{{product.price}}</span>
+                <div class="rating">
+                    <app-star-rating [rating]="product.ratingsAverage"></app-star-rating>
+                    <span>{{product.ratingsAverage}}</span>
+                </div>
+            </div>
+            <span class="wish-icon" >
+                <i [ngClass]="newWishList.includes(product._id)? 'fa-solid fa-heart-crack' : 'fa-solid fa-heart' "
+                (click)="updateWishIcon(product._id)"></i>
+            </span>
+            <button class="btn main-btn w-100" (click)="addToCart(product._id)">Add + </button>
+        </div>
+    </div>
+</div>
